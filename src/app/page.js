@@ -19,8 +19,7 @@ export default function Home() {
           Aspiring Aerospace Engineer • Problem Solver • Scholar
         </h2>
         <p className="text-sm sm:text-base text-gray-700 mb-6 sm:mb-8">
-          Welcome to my personal portfolio! I'm passionate about engineering, design, and building real-world solutions.
-          Here you’ll find my resume, personal projects, and links to things I’ve worked on.
+          {"Welcome to my personal portfolio! I'm passionate about engineering, design, and building real-world solutions. Here you’ll find my resume, personal projects, and links to things I’ve worked on."}
         </p>
         
         {/* Buttons */}
