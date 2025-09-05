@@ -1,8 +1,15 @@
 import Link from "next/link";
+import PhotoCard from "@/components/PhotoCard";
+
+const images = [
+  { src: "/images/car.jpg", alt:"blank"},
+  { src: "/images/hiking.jpg", alt: "Blank"},
+];
 
 export default function AboutPage() {
   return (
-    <div className="px-4 py-8 sm:px-6 lg:px-8 max-w-3xl mx-auto bg-white">
+    <div className="min-h-screen w-full bg-white px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-5xl mx-auto">
       <Link href="/" className="text-slate-600 hover:underline mb-4 block">
         ← Back to Home
       </Link>
@@ -16,16 +23,16 @@ export default function AboutPage() {
       <ul className="list-disc list-inside text-base sm:text-lg text-slate-700 mb-6 space-y-2">
         <li>Hiking and camping with friends</li>
         <li>Learning about cars</li>
-        <li>Staying active at the gym</li>
-        <li>Traveling to experience new cultures and foods</li>
+        <li>Staying active in the gym</li>
+        <li>Experiencing new cultures and food through travel</li>
       </ul>
       <h2 className="text-2xl sm:text-3xl font-semibold text-slate-800 mb-4">Photo Gallery</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <img src="/images/hiking.jpg" alt="Hiking" className="rounded-lg shadow-lg object-cover w-full h-48 sm:h-60" />
-        <img src="/images/soccer.jpg" alt="Soccer" className="rounded-lg shadow-lg object-cover w-full h-48 sm:h-60" />
-        <img src="/images/cooking.jpg" alt="Cooking" className="rounded-lg shadow-lg object-cover w-full h-48 sm:h-60" />
-        <img src="/images/project.jpg" alt="DIY Project" className="rounded-lg shadow-lg object-cover w-full h-48 sm:h-60" />
+        {images.map((img, index) => (
+          <PhotoCard key={index} src={img.src} alt={img.alt} />
+        ))}
       </div>
+    </div>
     </div>
   );
 }
